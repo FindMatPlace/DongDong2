@@ -1,6 +1,5 @@
 package com.gcu.dongdong2.signup
 
-import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.gcu.dongdong2.LoginActivity
+import com.gcu.dongdong2.login.LoginActivity
 import com.gcu.dongdong2.R
 import com.gcu.dongdong2.databinding.FragmentNameBinding
 import com.google.android.material.snackbar.Snackbar

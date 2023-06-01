@@ -1,14 +1,14 @@
-package com.gcu.dongdong2;
+package com.gcu.dongdong2.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.gcu.dongdong2.MainActivity;
 import com.gcu.dongdong2.databinding.ActivtiyLoginBinding;
 import com.gcu.dongdong2.signup.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,11 +53,11 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                System.out.println(task.toString());
-                                System.out.println(task.getResult());
+//                                System.out.println(task.toString());
+//                                System.out.println(task.getResult());
                                 if (task.isSuccessful()) {
-//                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                                    startActivity(intent);
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
                                     Toast.makeText(getBaseContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(getBaseContext(), "로그인 오류", Toast.LENGTH_SHORT).show();
