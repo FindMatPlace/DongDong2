@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_nav_graph"
+    app:startDestination="@id/idFragment">
+
+    <fragment
+        android:id="@+id/idFragment"
+        android:name="com.gcu.dongdong2.signup.IdPasswordFragment"
+        android:label="아이디 입력">
+        <action
+            android:id="@+id/action_idFragment_to_nameFragment"
+            app:destination="@id/nameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.gcu.dongdong2.signup.SignFragment"
+        android:label="이름 입력">
+        <action
+            android:id="@+id/action_nameFragment_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.gcu.dongdong2.signup.VerifyCodeFragment"
+        android:label="학교 인증">
+        <argument
+            android:name="auth"
+            app:argType="boolean" />
+    </fragment>
+
+</navigation>

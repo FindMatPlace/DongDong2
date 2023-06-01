@@ -1,0 +1,46 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userinfopage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/schoolrequset"
+    android:elevation="4dp">
+
+    <ImageButton
+        android:id="@+id/schoolrequestBack"
+        android:layout_width="58dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/userinfoeback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_verify"
+        android:layout_width="96dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/schoolrequestverify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schoolrequestBack" />
+
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/cameraProfile"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:background="@drawable/club_profile_frame"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        />-->
+<!--    <android.widget.Button-->
+<!--        android:id="@+id/btnCamera"-->
+<!--        android:layout_width="35dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:background="@drawable/club_profile_drawing1"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:layout_marginLeft="-50dp"-->
+<!--        />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

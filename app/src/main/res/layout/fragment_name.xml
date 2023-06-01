@@ -1,0 +1,93 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userinfopage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/userinfopage"
+    android:elevation="4dp">
+
+    <ImageButton
+        android:id="@+id/userinfoback"
+        android:layout_width="60dp"
+        android:layout_height="61dp"
+        android:background="@drawable/userinfoeback"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp" />
+
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="280dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="88dp"
+        android:hint="이름"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userinfoback" />
+
+    <EditText
+        android:id="@+id/textView4"
+        android:layout_width="107dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:hint="생년(4자)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_name" />
+
+    <EditText
+        android:id="@+id/textView5"
+        android:layout_width="91dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="월"
+        app:layout_constraintStart_toEndOf="@id/textView4"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_name" />
+
+    <EditText
+        android:id="@+id/textView6"
+        android:layout_width="92dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="일"
+        app:layout_constraintStart_toEndOf="@id/textView5"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_name" />
+
+    <EditText
+        android:id="@+id/textView7"
+        android:layout_width="336dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:hint="휴대폰 전화번호는 - 없이 입력해주세요"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+    <ImageButton
+        android:id="@+id/button_verify_school"
+        android:layout_width="199dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/userinfoverify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <ImageButton
+        android:id="@+id/btn_create"
+        android:layout_width="179dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/userinfosignup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_verify_school" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
