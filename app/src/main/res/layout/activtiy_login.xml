@@ -1,0 +1,100 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginpage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginpage"
+    android:elevation="4dp">
+
+    <ImageView
+        android:id="@+id/idlabel"
+        android:layout_width="386dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="316dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/loginid" />
+
+    <EditText
+        android:id="@+id/user_id"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="332dp"
+        android:background="@null"
+        android:hint="ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pwlabel"
+        android:layout_width="445dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idlabel"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/loginpw" />
+
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_width="211dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="440dp"
+        android:background="@null"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_signup"
+        android:layout_width="51dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/loginsignup"
+        app:layout_constraintEnd_toStartOf="@id/login"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pwlabel" />
+
+    <ImageButton
+        android:id="@+id/login"
+        android:layout_width="157dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/loginbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwlabel" />
+
+    <ImageButton
+        android:id="@+id/findId"
+        android:layout_width="80dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/loginfindid"
+        app:layout_constraintEnd_toStartOf="@id/findPw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pwlabel" />
+
+    <ImageButton
+        android:id="@+id/findPw"
+        android:layout_width="92dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/loginfindpw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/findId"
+        app:layout_constraintTop_toBottomOf="@id/pwlabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
