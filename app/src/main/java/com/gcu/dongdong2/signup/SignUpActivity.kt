@@ -3,6 +3,7 @@ package com.gcu.dongdong2.signup
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.gcu.dongdong2.databinding.ActivitySignupBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -13,4 +14,5 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
 }
