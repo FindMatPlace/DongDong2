@@ -40,13 +40,6 @@ class VerifyCodeFragment : Fragment() {
             savedStateHandle[AUTH] = false
         }
 
-        // 넘어온 phone이 이미 확인된 거라면 PASS
-//        val args = VerifyCodeFragmentArgs.fromBundle(requireArguments())
-//        val auth = args.auth ?: false
-//        if (auth) {
-//            onVerificationSucceed()
-//        }
-
         binding.btnVerify.setOnClickListener {
 
             if (savedStateHandle.getLiveData<Boolean>(AUTH).value == true) {
@@ -59,10 +52,10 @@ class VerifyCodeFragment : Fragment() {
             }
         }
 
-//        binding.btnTest.setOnClickListener {
-//            savedStateHandle[AUTH] = true
-////            onVerificationSucceed()
-//        }
+        binding.btnTest.setOnClickListener {
+            savedStateHandle[AUTH] = true
+//            onVerificationSucceed()
+        }
     }
 
     // 인증성공, PhoneFragment로 돌아간다.
