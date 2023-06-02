@@ -1,4 +1,4 @@
-package com.gcu.dongdong2;
+package com.gcu.dongdong2.alarm;
 
 import android.graphics.drawable.Drawable;
 

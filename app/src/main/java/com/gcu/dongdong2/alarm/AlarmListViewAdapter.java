@@ -1,4 +1,4 @@
-package com.gcu.dongdong2;
+package com.gcu.dongdong2.alarm;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.gcu.dongdong2.R;
 
 import java.util.ArrayList;
 

@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 
 public class FindFragment extends Fragment {
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
