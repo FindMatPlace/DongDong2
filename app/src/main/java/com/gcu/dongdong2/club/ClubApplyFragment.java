@@ -16,6 +16,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +34,8 @@ public class ClubApplyFragment extends Fragment implements View.OnClickListener 
 
     private ArrayList<String> AnswerList;
 
+    private String clubname;
+
     public ClubApplyFragment() {
         // Required empty public constructor
     }
@@ -45,7 +49,13 @@ public class ClubApplyFragment extends Fragment implements View.OnClickListener 
         btnCamera.setOnClickListener(this);
 
         ClubName = rootView.findViewById(R.id.club_apply_name);
-        ClubName.setText("동아리 이름"); // clubcode를 통해 동아리 이름을 받아야함
+
+        Bundle args = getArguments();
+        if (args != null) {
+            clubname = args.getString("Clubname", "동아리 이름");
+        }
+
+        ClubName.setText(clubname); // clubcode를 통해 동아리 이름을 받아야함
 
         RecyclerView recyclerView = rootView.findViewById(R.id.clubApplyRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -67,6 +77,18 @@ public class ClubApplyFragment extends Fragment implements View.OnClickListener 
                 }
                 // dataList을 사용하여 원하는 작업 수행
                 // 예를 들어, 데이터를 서버로 전송하거나 다른 액티비티로 전달할 수 있습니다.
+
+                ClubExploreFragment clubExploreFragment = new ClubExploreFragment();
+
+                // FragmentManager를 사용하여 Fragment 트랜잭션 시작
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                // Fragment 트랜잭션에 ClubExploreFragment 추가
+                fragmentTransaction.replace(R.id.frameLayout, clubExploreFragment);
+
+                // Fragment 트랜잭션 커밋
+                fragmentTransaction.commit();
             }
         });
 
