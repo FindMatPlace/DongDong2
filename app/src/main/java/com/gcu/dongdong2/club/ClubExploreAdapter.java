@@ -1,6 +1,7 @@
 package com.gcu.dongdong2.club;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gcu.dongdong2.R;
@@ -43,13 +46,20 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
         holder.enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String clubname =club.getName(); // 동아리에 대한 코드 값을 설정해주세요
 
-                Integer clubcode = 0; //!!!!!어떤 동아리에 대한건지에 대한 Code
+                // 데이터를 전송할 Fragment 생성
+                ClubPostFragment clubPostFragment = new ClubPostFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("Clubname", clubname);
+                clubPostFragment.setArguments(bundle);
 
-                // Example: Sending data to another activity
-                Intent intent = new Intent(view.getContext(), ClubPostFragment.class); //데이터를 전송할 클래스
-                intent.putExtra("ClubCode", clubcode);
-                view.getContext().startActivity(intent);
+                // Fragment 전환
+                FragmentManager fragmentManager = ((AppCompatActivity) view.getContext()).getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, clubPostFragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }
