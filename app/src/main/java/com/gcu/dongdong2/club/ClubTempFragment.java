@@ -57,15 +57,6 @@ public class ClubTempFragment extends Fragment {
             }
         });
 
-        Button btnPostSearchingTemp = rootView.findViewById(R.id.btnPostSearchingTemp);
-        btnPostSearchingTemp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ClubSearchingFragment.class);
-                startActivity(intent);
-            }
-        });
-
         return rootView;
     }
 }
