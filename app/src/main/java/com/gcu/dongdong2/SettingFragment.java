@@ -44,8 +44,6 @@ public class SettingFragment extends Fragment {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
-
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -56,9 +54,6 @@ public class SettingFragment extends Fragment {
 
     private FragmentTransaction fragmentTransaction;
     private FragmentManager fragmentManager;
-
-    private String mParam1;
-    private String mParam2;
 
     public SettingFragment() {
         // Required empty public constructor
@@ -87,20 +82,7 @@ public class SettingFragment extends Fragment {
         if (binding == null) {
             binding = FragmentUserSettingBinding.inflate(inflater, container, false);
         }
-
         FirebaseUser firebaseUser = auth.getCurrentUser();
-
-        // 사용자 이름
-        String name = null;
-//        if (firebaseUser != null) {
-////            name = firebaseUser.getDisplayName();
-//            Log.d(TAG,firebaseUser.getUid());
-////            Log.d(TAG,firebaseUser.getDisplayName().toString());
-//            Log.d(TAG,firebaseUser.getProviderId());
-//            Log.d(TAG,firebaseUser.getMetadata().toString());
-////            Log.d(TAG,firebaseUser.getTenantId());
-//            binding.textUserName.setText(name);
-//        }
 
         // "users" 컬렉션의 category 필드가 유저의 "email" 문서를 가져오는 쿼리 생성
         CollectionReference userRef = db.collection("users");
@@ -149,9 +131,5 @@ public class SettingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 }
