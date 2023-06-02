@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.gcu.dongdong2.databinding.FragmentIdpasswordBinding;
 import com.gcu.dongdong2.databinding.FragmentUserSettingBinding;
+import com.gcu.dongdong2.login.LoginActivity;
 import com.gcu.dongdong2.userInfo.ChangePasswordFragment;
 
 /**
