@@ -48,14 +48,14 @@ public class ClubExploreFragment extends Fragment {
         btnSearchingTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClubSearchingFragment clubPostSearchingFragment = new ClubSearchingFragment();
+                ClubSearchedFragment clubPostSearchedFragment = new ClubSearchedFragment();
 
                 // FragmentManager를 사용하여 Fragment 트랜잭션 시작
                 FragmentManager fragmentManager = getParentFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 // Fragment 트랜잭션에 ClubApplyFragment 추가
-                fragmentTransaction.replace(R.id.frameLayout, clubPostSearchingFragment);
+                fragmentTransaction.replace(R.id.frameLayout, clubPostSearchedFragment);
 
                 // Fragment 트랜잭션 커밋
                 fragmentTransaction.commit();

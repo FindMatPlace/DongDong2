@@ -46,12 +46,12 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
         holder.enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer clubCode = 0; // 동아리에 대한 코드 값을 설정해주세요
+                String clubname =club.getName(); // 동아리에 대한 코드 값을 설정해주세요
 
                 // 데이터를 전송할 Fragment 생성
                 ClubPostFragment clubPostFragment = new ClubPostFragment();
                 Bundle bundle = new Bundle();
-                bundle.putInt("ClubCode", clubCode);
+                bundle.putString("Clubname", clubname);
                 clubPostFragment.setArguments(bundle);
 
                 // Fragment 전환
