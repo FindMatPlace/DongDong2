@@ -52,7 +52,6 @@ public class HomeFragment extends Fragment {
     // Method to create dummy data for the board
     private List<BoardItem> createDummyData() {
         List<BoardItem> boardItemList = new ArrayList<>();
-
         // Add dummy items
         BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", R.drawable.board_image1);
         BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", R.drawable.board_image2);

@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.gcu.dongdong2.test.dto.GroupCreateDto;
+import com.gcu.dongdong2.test.dto.NoticeDto;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,14 +42,43 @@ public class TestDevelop extends AppCompatActivity {
                         Log.d(TAG, "Error: " + e);
                     }
                 });
-
     }
 
-    private void groupAdvertise() {
-
+    private void groupAdvertise(AdvertiseDto advertiseDto) {
+        db.collection("advertises")
+                .add(advertiseDto)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "홍보글 작성 완료");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "Error: " + e);
+                    }
+                });
     }
 
     private void groupAccept() {
 
+    }
+
+    private void groupNotice(NoticeDto noticeDto) {
+        db.collection("posts")
+                .add(noticeDto)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "게시물 작성 완료");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "Error: " + e);
+                    }
+                });
     }
 }
