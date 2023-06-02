@@ -1,6 +1,9 @@
 package com.gcu.dongdong2.club;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClubSearchingActivity extends AppCompatActivity {
+
+
 
 
     @Override
@@ -32,6 +37,15 @@ public class ClubSearchingActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter); // RecyclerView에 어댑터 설정
 
 
+        Button Back_btn = (Button) findViewById(R.id.go_searched);
+        Back_btn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), ClubSearchedActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

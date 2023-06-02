@@ -12,13 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="20dp">
-        <android.widget.Button
-            android:layout_width="20dp"
-            android:layout_height="27dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="-30dp"
-            android:background="@drawable/club_search_drawing2"
-            />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,24 +25,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="(동아리 이름)"
+            android:hint="(동아리 이름)"
             android:textSize="20dp"
             android:textColor="#3F51B5"/>
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+
         android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cameraProfile"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:background="@drawable/club_profile_frame"
-            android:layout_marginRight="10dp"
+
             />
         <android.widget.Button
             android:id="@+id/btnCamera"
@@ -60,12 +56,22 @@
             />
 
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clubApplyRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        >
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="300dp"
+        android:layout_margin="5dp"></androidx.recyclerview.widget.RecyclerView>
 
+    <android.widget.Button
+        android:id="@+id/btnClubApplyEnter"
+        android:layout_width="192dp"
+        android:layout_height="88dp"
+        android:paddingBottom="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-20dp"
+        android:text="입력 완료"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/club_apply_button" />
 </LinearLayout>

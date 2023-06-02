@@ -17,7 +17,8 @@
             android:layout_marginTop="70dp"
             android:orientation="horizontal">
 
-            <android.widget.Button
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/clubLogo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -31,6 +32,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/clubName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
@@ -47,6 +49,7 @@
 <!--                    android:textSize="15dp" />-->
 
                 <TextView
+                    android:id="@+id/clubPostContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -62,7 +65,7 @@
         <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/frame_440"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_margin="20dp"
             android:background="@drawable/club_recommend_frame" />
 

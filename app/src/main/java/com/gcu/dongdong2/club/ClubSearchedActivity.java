@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClubSearchedActivity extends AppCompatActivity  {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +29,10 @@ public class ClubSearchedActivity extends AppCompatActivity  {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this); // 세로 방향으로 아이템을 배치하는 레이아웃 매니저
         recyclerView.setLayoutManager(layoutManager);
 
-        List<Club> clubList = new ArrayList<>();
+        List<Club> clubList = new ArrayList<>(); /////!!!!! 동아리 정보에 대한 데이터 ( 동아리 이름, 카테고리, 로고 순 )
         clubList.add(new Club("ABC", "Category 1", R.drawable.club_drawing1));
         clubList.add(new Club("BCD", "Category 2", R.drawable.club_drawing1));
-        clubList.add(new Club("DEF", "Category 3", R.drawable.club_drawing1));
+        clubList.add(new Club("DEF", "Category 3", R.drawable.club_drawing1)); //Test dataset
 
         ClubExploreAdapter adapter = new ClubExploreAdapter(clubList); // 데이터 소스를 가진 어댑터 객체 생성
         recyclerView.setAdapter(adapter); // RecyclerView에 어댑터 설정
@@ -56,24 +58,6 @@ public class ClubSearchedActivity extends AppCompatActivity  {
         });
 
 
-        Button Back_btn = (Button) findViewById(R.id.btnBack);
-        Back_btn.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), ClubSearchingActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button Notification_btn = (Button) findViewById(R.id.btnNotification);
-        Notification_btn.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view){
-//                Intent intent = new Intent(getApplicationContext(), XXXXX.class);
-//                startActivity(intent);
-            }
-        });
     }
 }

@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/frame_455"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:orientation="horizontal">
+    android:layout_height="120dp">
 
-    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/clubLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/club_recommend_frame" />
+    <android.widget.Button
+        android:id="@+id/clubEnterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+        android:id="@+id/frame_455"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical">
+        android:layout_height="120dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/clubName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="동아리 이름"
-            android:layout_margin="5dp"
-            android:textColor="@color/black" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:paddingRight="5dp"
-            android:hint="동아리 설명" />
+        <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/clubLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/club_recommend_frame" />
 
-        <TextView
-            android:id="@+id/clubCategory"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="동아리 카테고리"
-            android:layout_margin="5dp"
-            android:textColor="#3F51B5" />
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clubName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="동아리 이름"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="동아리 설명"
+                android:paddingRight="5dp" />
+
+            <TextView
+                android:id="@+id/clubCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="동아리 카테고리"
+                android:textColor="#3F51B5" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>
