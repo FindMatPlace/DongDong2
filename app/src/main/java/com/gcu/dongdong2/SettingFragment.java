@@ -1,5 +1,6 @@
 package com.gcu.dongdong2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,8 +73,17 @@ public class SettingFragment extends Fragment {
         binding.btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(requireContext(), "이미지 버튼 눌림", Toast.LENGTH_SHORT);
                 ((MainActivity)getActivity()).replaceFragment(new ChangePasswordFragment());
+            }
+        });
+
+        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(requireContext(), "로그아웃", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(requireContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
         
