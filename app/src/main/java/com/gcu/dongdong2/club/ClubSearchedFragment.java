@@ -34,9 +34,10 @@ public class ClubSearchedFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         List<Club> clubList = new ArrayList<>(); /////!!!!! 동아리 정보에 대한 데이터 ( 동아리 이름, 카테고리, 로고 순 )
-        clubList.add(new Club("ABC", "Category 1", R.drawable.club_drawing1));
-        clubList.add(new Club("BCD", "Category 2", R.drawable.club_drawing1));
-        clubList.add(new Club("DEF", "Category 3", R.drawable.club_drawing1)); //Test dataset
+        clubList.add(new Club("가톨릭 학생회 마타티아","가천대 유일 가톨릭 동아리", "기타", R.drawable.club_drawing1)); //Test dataset
+        clubList.add(new Club("리더스", "보드게임 동아리","Category 1", R.drawable.club_drawing1));
+        clubList.add(new Club("스냅샷","사진 출사", "기타", R.drawable.club_drawing1));
+
 
         adapter = new ClubExploreAdapter(clubList); // 데이터 소스를 가진 어댑터 객체 생성
         recyclerView.setAdapter(adapter); // RecyclerView에 어댑터 설정

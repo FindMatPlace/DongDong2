@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,9 +35,11 @@ public class ClubSearchingFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         List<Club> clubList = new ArrayList<>();
-        clubList.add(new Club("Club A", "Category 1", R.drawable.club_drawing1));
-        clubList.add(new Club("Club B", "Category 2", R.drawable.club_drawing1));
-        clubList.add(new Club("Club C", "Category 3", R.drawable.club_drawing1));
+        clubList.add(new Club("마타티아","가천대 유일 가톨릭 동아리", "기타", R.drawable.club_drawing1));
+        clubList.add(new Club("EPU","댄스 동아리", "기타", R.drawable.club_drawing1));
+        clubList.add(new Club("리더스","보드게임 동아리", "컴퓨터", R.drawable.club_drawing1));
+        clubList.add(new Club("페이키","레저스포츠 동아리", "IT", R.drawable.club_drawing1));
+
 
         adapter = new ClubExploreAdapter(clubList); // 데이터 소스를 가진 어댑터 객체 생성
         recyclerView.setAdapter(adapter); // RecyclerView에 어댑터 설정
@@ -45,8 +49,17 @@ public class ClubSearchingFragment extends Fragment {
 
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(requireContext(), ClubSearchedFragment.class);
-                startActivity(intent);
+                ClubSearchedFragment clubPostSearchedFragment = new ClubSearchedFragment();
+
+                // FragmentManager를 사용하여 Fragment 트랜잭션 시작
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                // Fragment 트랜잭션에 ClubApplyFragment 추가
+                fragmentTransaction.replace(R.id.frameLayout, clubPostSearchedFragment);
+
+                // Fragment 트랜잭션 커밋
+                fragmentTransaction.commit();
             }
         });
 
