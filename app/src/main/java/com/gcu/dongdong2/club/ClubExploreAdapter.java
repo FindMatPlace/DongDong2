@@ -47,7 +47,7 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
                 Integer clubcode = 0; //!!!!!어떤 동아리에 대한건지에 대한 Code
 
                 // Example: Sending data to another activity
-                Intent intent = new Intent(view.getContext(), ClubPostActivity.class); //데이터를 전송할 클래스
+                Intent intent = new Intent(view.getContext(), ClubPostFragment.class); //데이터를 전송할 클래스
                 intent.putExtra("ClubCode", clubcode);
                 view.getContext().startActivity(intent);
             }
@@ -78,18 +78,22 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
     public static class ClubExploreViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewClubName;
         private TextView textViewCategory;
+        private TextView textViewExplain;
         private ImageView imageViewClubLogo;
         private Button enterButton;
 
         public ClubExploreViewHolder(View itemView) {
             super(itemView);
             textViewClubName = itemView.findViewById(R.id.clubName);
+            textViewExplain = itemView.findViewById(R.id.text_explain);
             textViewCategory = itemView.findViewById(R.id.clubCategory);
             imageViewClubLogo = itemView.findViewById(R.id.clubLogo);
+            enterButton = itemView.findViewById(R.id.clubEnterBtn);
         }
 
         public void bindData(Club club) {
             textViewClubName.setText(club.getName());
+            textViewExplain.setText(club.getExplain());
             textViewCategory.setText(club.getCategory());
             imageViewClubLogo.setImageResource(club.getLogoResId());
         }
