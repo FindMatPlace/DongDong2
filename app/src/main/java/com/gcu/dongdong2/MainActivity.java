@@ -62,6 +62,6 @@ public class MainActivity extends AppCompatActivity {
     public void replaceFragment(Fragment fragment) {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
+        fragmentTransaction.replace(R.id.frameLayout, fragment).commit();  // Fragment로 사용할 MainActivity내의 layout공간을 선택
     }
 }
