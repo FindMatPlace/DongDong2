@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment {
         // 1) Get reference to ViewPager2
         ViewPager2 viewPager = view.findViewById(R.id.bannerViewPager);
 
+
         // 2) Create FragmentStateAdapter: responsible for connecting multiple Fragments to ViewPager2
         ViewpagerFragmentAdapter viewpagerFragmentAdapter = new ViewpagerFragmentAdapter(getActivity());
         // 3) Set the adapter for ViewPager2
@@ -75,6 +76,7 @@ public class HomeFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             return inflater.inflate(R.layout.banner2_fragment, container, false);
         }
+
     }
 
     public static class Fragment03 extends Fragment {
