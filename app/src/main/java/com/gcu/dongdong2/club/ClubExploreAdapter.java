@@ -78,12 +78,14 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
     public static class ClubExploreViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewClubName;
         private TextView textViewCategory;
+        private TextView textViewExplain;
         private ImageView imageViewClubLogo;
         private Button enterButton;
 
         public ClubExploreViewHolder(View itemView) {
             super(itemView);
             textViewClubName = itemView.findViewById(R.id.clubName);
+            textViewExplain = itemView.findViewById(R.id.text_explain);
             textViewCategory = itemView.findViewById(R.id.clubCategory);
             imageViewClubLogo = itemView.findViewById(R.id.clubLogo);
             enterButton = itemView.findViewById(R.id.clubEnterBtn);
@@ -91,6 +93,7 @@ public class ClubExploreAdapter extends RecyclerView.Adapter<ClubExploreAdapter.
 
         public void bindData(Club club) {
             textViewClubName.setText(club.getName());
+            textViewExplain.setText(club.getExplain());
             textViewCategory.setText(club.getCategory());
             imageViewClubLogo.setImageResource(club.getLogoResId());
         }
