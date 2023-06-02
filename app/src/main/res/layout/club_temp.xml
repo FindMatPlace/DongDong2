@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".FindFragment">
+
+
+    <android.widget.Button
+        android:id="@+id/btnApplyTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동아리 지원서"
+        />
+
+    <android.widget.Button
+        android:id="@+id/btnExploreTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동아리 탐색"
+        />
+
+    <android.widget.Button
+        android:id="@+id/btnPostTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동아리 포스트"
+        />
+
+    <android.widget.Button
+        android:id="@+id/btnPostSearchedTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동아리 검색후"
+        />
+
+    <android.widget.Button
+        android:id="@+id/btnPostSearchingTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동아리 검색전"
+        />
+
+
+</LinearLayout>

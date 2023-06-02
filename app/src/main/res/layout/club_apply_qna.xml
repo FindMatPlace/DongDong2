@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+
+    android:padding="17dp"
+    android:gravity="left">
+    <TextView
+        android:id="@+id/clubApplyQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="질문"
+        android:textSize="23dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/clubApplyAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="답변"
+        android:textSize="20dp"
+        android:drawablePadding="5dp"
+        android:drawableBottom="@drawable/club_profile_frame2"
+        android:textColor="#B3000000"/>
+</LinearLayout>

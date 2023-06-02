@@ -1,22 +1,24 @@
 package com.gcu.dongdong2;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import com.gcu.dongdong2.databinding.FragmentIdpasswordBinding;
-import com.gcu.dongdong2.databinding.FragmentUserSettingBinding;
-import com.gcu.dongdong2.userInfo.ChangePasswordFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.gcu.dongdong2.databinding.FragmentIdpasswordBinding;
+import com.gcu.dongdong2.databinding.FragmentUserSettingBinding;
+import com.gcu.dongdong2.userInfo.ChangePasswordFragment;
 
 /**
  * A simple {@link Fragment} subclass.

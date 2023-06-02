@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_440"
+    android:layout_width="208dp"
+    android:layout_height="172dp"
+    android:layout_marginLeft="10dp"
+    android:background="@drawable/club_recommend_frame"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/club_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="오늘의 경제 동아리"
+        android:textColor="@color/black"
+        android:drawableRight="@drawable/club_recommend_drawing1"
+        android:layout_marginRight="30dp"
+        android:textSize="15dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/club_id"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginBottom="15dp"-->
+<!--        android:text="\@gyeongjeyanolja" />-->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/club_search_frame">
+
+        <TextView
+            android:id="@+id/club_member_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/club_recommend_drawing2"
+
+            android:text="0"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/club_member_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/club_recommend_drawing3"
+
+            android:text="0"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/club_profile_frame" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/club_profile_frame" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/club_profile_frame" />
+    </LinearLayout>
+</LinearLayout>
