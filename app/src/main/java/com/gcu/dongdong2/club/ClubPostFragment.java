@@ -54,6 +54,11 @@ public class ClubPostFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         List<Comment> commentList = new ArrayList<>(); // !!!!!동아리 포스트에 달린 댓글 대한 정보를 넣어주면 됨 ( 유저 네임, 댓글 내용, 프로필사진 순 )
+
+        commentList.add(new Comment("정규원","질문 1",R.drawable.club_drawing1));
+        commentList.add(new Comment("이현석","질문 2",R.drawable.club_drawing1));
+        commentList.add(new Comment("이한슬","질문 3",R.drawable.club_drawing1));
+
         PostCommentAdapter adapter = new PostCommentAdapter(commentList); // 데이터 소스를 가진 어댑터 객체 생성
         recyclerView.setAdapter(adapter); // RecyclerView에 어댑터 설정
 

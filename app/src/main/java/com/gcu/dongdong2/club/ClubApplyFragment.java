@@ -37,7 +37,7 @@ public class ClubApplyFragment extends Fragment implements View.OnClickListener 
     private String clubname;
 
     public ClubApplyFragment() {
-        // Required empty public constructor
+        AnswerList = new ArrayList<>();
     }
 
     @Override
@@ -62,6 +62,11 @@ public class ClubApplyFragment extends Fragment implements View.OnClickListener 
         recyclerView.setLayoutManager(layoutManager);
 
         List<String> dataList = new ArrayList<>(); // 동아리 지원서에 대한 질문을 받아야함
+
+        dataList.add("질문 1");
+        dataList.add("질문 2");
+        dataList.add("질문 3");
+
         ClubApplyAdapter adapter = new ClubApplyAdapter(dataList);
         recyclerView.setAdapter(adapter);
 
