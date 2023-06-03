@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,8 +24,8 @@ import java.util.List;
 
 public class ClubPostFragment extends Fragment {
 
-    private int ClubCode;
-
+    private String Clubname;
+    private String realclubname;
     private TextView clubName;
     private TextView postContent;
     private ImageView clubLogo;
@@ -36,14 +37,15 @@ public class ClubPostFragment extends Fragment {
 
         Bundle bundle = getArguments();
         if (bundle != null) {
-            ClubCode = bundle.getInt("ClubCode", 0);
+            Clubname = bundle.getString("Clubname", "전달된 동아리가 없습니다");
+            realclubname=Clubname;
         }
 
         clubName = rootView.findViewById(R.id.clubName);
         postContent = rootView.findViewById(R.id.clubPostContent);
         clubLogo = rootView.findViewById(R.id.clubLogo);
 
-        clubName.setText("동아리 이름"); // !!!!!동아리 이름
+        clubName.setText(realclubname); // !!!!!동아리 이름
         postContent.setText("동아리 홍보글"); // !!!!!동아리 홍보글
         clubLogo.setImageResource(R.drawable.club_drawing1); // !!!!!동아리 로고
 
@@ -59,9 +61,17 @@ public class ClubPostFragment extends Fragment {
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), ClubApplyFragment.class);
-                intent.putExtra("ClubCode", ClubCode); // !!!!!어떤 동아리에 대한 지원서인지 코드 전달
-                startActivity(intent);
+                ClubApplyFragment clubApplyFragment = new ClubApplyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("Clubname", realclubname);
+                clubApplyFragment.setArguments(bundle);
+
+                // Fragment 전환
+                FragmentManager fragmentManager = ((AppCompatActivity) view.getContext()).getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frameLayout, clubApplyFragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 

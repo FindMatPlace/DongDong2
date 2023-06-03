@@ -53,7 +53,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
 
         public BoardViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivProfile = itemView.findViewById(R.id.iv_profile);
+            ivProfile = itemView.findViewById(R.id.tv_profile);
             tvName = itemView.findViewById(R.id.tv_name);
             ivContent = itemView.findViewById(R.id.iv_content);
             tvContent = itemView.findViewById(R.id.tv_content);
