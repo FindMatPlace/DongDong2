@@ -2,7 +2,6 @@ package com.gcu.dongdong2;
 
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.gcu.dongdong2.mainpage.BoardAdapter;
 import com.gcu.dongdong2.mainpage.BoardItem;
+import com.gcu.dongdong2.mainpage.RecyclerViewAdaptor;
 import com.gcu.dongdong2.mainpage.ViewpagerFragmentAdapter;
 
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public class HomeFragment extends Fragment {
         // 1) Get reference to ViewPager2
         ViewPager2 viewPager = view.findViewById(R.id.bannerViewPager);
 
-
         // 2) Create FragmentStateAdapter: responsible for connecting multiple Fragments to ViewPager2
         ViewpagerFragmentAdapter viewpagerFragmentAdapter = new ViewpagerFragmentAdapter(getActivity());
         // 3) Set the adapter for ViewPager2
@@ -38,13 +36,15 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycle_board);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
         List<BoardItem> boardItemList = createDummyData();
-        BoardAdapter boardAdapter = new BoardAdapter(getActivity(), boardItemList);
-        recyclerView.setAdapter(boardAdapter);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recycle_board);
+        RecyclerViewAdaptor adaptor = new RecyclerViewAdaptor(getContext(), boardItemList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adaptor);
 
         return view;
     }
@@ -54,9 +54,9 @@ public class HomeFragment extends Fragment {
         List<BoardItem> boardItemList = new ArrayList<>();
 
         // Add dummy items
-        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", R.drawable.board_image1);
-        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", R.drawable.board_image2);
-        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "Sed do eiusmod tempor incididunt", R.drawable.board_image1);
+        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", R.drawable.board_image1, 1);
+        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", R.drawable.board_image2, 2);
+        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "Sed do eiusmod tempor incididunt", R.drawable.board_image1, 3);
 
         boardItemList.add(item1);
         boardItemList.add(item2);
