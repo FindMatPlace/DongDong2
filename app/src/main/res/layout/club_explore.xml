@@ -38,17 +38,14 @@
             android:textColor="#000000"
             android:textSize="19dp" />
 
-        <LinearLayout
-
+        <android.widget.Button
+            android:id="@+id/searchclub"
             android:layout_width="35dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="10dp">
-                <Button
-                    android:id="@+id/searchclub"
-                    android:text="search"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-        </LinearLayout>
+            android:layout_height="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/club_search_drawing1" />
+
 
     </LinearLayout>
 
