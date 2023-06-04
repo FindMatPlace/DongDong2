@@ -1,4 +1,4 @@
-package com.gcu.dongdong2;
+package com.gcu.dongdong2.alarm;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.widget.ListView;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.gcu.dongdong2.R;
 
 public class AlarmFragment extends Fragment {
 

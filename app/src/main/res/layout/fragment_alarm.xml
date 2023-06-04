@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/alarmpage"
-    tools:context=".AlarmFragment">
+    tools:context=".alarm.AlarmFragment">
 
     <ListView
         android:id="@+id/alarmview"
@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.408" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

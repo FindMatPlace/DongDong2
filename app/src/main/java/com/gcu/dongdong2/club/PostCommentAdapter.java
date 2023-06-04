@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gcu.dongdong2.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostCommentAdapter extends RecyclerView.Adapter<PostCommentViewHolder> {
@@ -27,6 +28,8 @@ public class PostCommentAdapter extends RecyclerView.Adapter<PostCommentViewHold
 
     @Override
     public void onBindViewHolder(@NonNull PostCommentViewHolder holder, int position) {
+
+
         Comment comment = commentList.get(position);
         holder.bindData(comment.getName(), comment.getComment(), comment.getLogoResId());
     }
