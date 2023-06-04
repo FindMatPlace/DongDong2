@@ -57,7 +57,9 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
         private void showBoardPageFragment(BoardItem item) {
             Fragment fragment = BoardPageFragment.newInstance(item.getProfileImage(), item.getContentImage(), item.getName(), item.getContent());
             FragmentTransaction transaction = ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frameLayout, fragment); // fragment_container는 보드 프래그먼트를 표시할 레이아웃의 ID입니다.
+
+            transaction.replace(R.id.frameLayout, fragment);
+
             transaction.addToBackStack(null);
             transaction.commit();
         }

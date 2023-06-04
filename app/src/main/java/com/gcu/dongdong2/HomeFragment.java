@@ -7,15 +7,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.gcu.dongdong2.mainpage.BoardItem;
 import com.gcu.dongdong2.mainpage.RecyclerViewAdaptor;
+import com.gcu.dongdong2.mainpage.ScheduleFragment;
+
 import com.gcu.dongdong2.mainpage.ViewpagerFragmentAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,6 +50,11 @@ public class HomeFragment extends Fragment {
         viewPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Fragment fragment = new ScheduleFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
@@ -59,7 +70,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
-
+/*
     private List<BoardItem> createPost() {
         List<BoardItem> boardItemList = new ArrayList<>();
         CollectionReference postsRef = db.collection("posts");
@@ -112,7 +123,7 @@ public class HomeFragment extends Fragment {
 
         return boardItemList;
     }
-
+*/
     // Method to create dummy data for the board
     private List<BoardItem> createDummyData() {
         List<BoardItem> boardItemList = new ArrayList<>();
@@ -127,25 +138,70 @@ public class HomeFragment extends Fragment {
 
         return boardItemList;
     }
+
     public static class Fragment01 extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.banner1_fragment, container, false);
+            View view = inflater.inflate(R.layout.banner1_fragment, container, false);
+
+            LinearLayout banner1Layout = view.findViewById(R.id.banner1);
+            banner1Layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 프래그먼트 전환 코드 작성
+                    Fragment fragment = new ScheduleFragment(); // 전환할 프래그먼트로 대체해주세요
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.frameLayout, fragment); // fragment_container는 프래그먼트를 표시할 레이아웃의 ID입니다.
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+            });
+            return view;
         }
     }
 
     public static class Fragment02 extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.banner2_fragment, container, false);
-        }
+            View view = inflater.inflate(R.layout.banner2_fragment, container, false);
 
+            LinearLayout banner2Layout = view.findViewById(R.id.banner2);
+            banner2Layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 프래그먼트 전환 코드 작성
+                    Fragment fragment = new ScheduleFragment(); // 전환할 프래그먼트로 대체해주세요
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.frameLayout, fragment); // fragment_container는 프래그먼트를 표시할 레이아웃의 ID입니다.
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+            });
+            return view;
+        }
     }
 
     public static class Fragment03 extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.banner3_fragment, container, false);
+            View view = inflater.inflate(R.layout.banner3_fragment, container, false);
+
+            LinearLayout banner3Layout = view.findViewById(R.id.banner3);
+            banner3Layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 프래그먼트 전환 코드 작성
+                    Fragment fragment = new ScheduleFragment(); // 전환할 프래그먼트로 대체해주세요
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.frameLayout, fragment); // fragment_container는 프래그먼트를 표시할 레이아웃의 ID입니다.
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+            });
+            return view;
         }
     }
 }
