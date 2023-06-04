@@ -5,12 +5,14 @@ public class BoardItem {
     private String name;
     private String content;
     private int contentImage;
+    private int id;
 
-    public BoardItem(int profileImage, String name, String content, int contentImage) {
+    public BoardItem(int profileImage, String name, String content, int contentImage, int id) {
         this.profileImage = profileImage;
         this.name = name;
         this.content = content;
         this.contentImage = contentImage;
+        this.id = id;
     }
 
     public int getProfileImage() {
@@ -43,5 +45,13 @@ public class BoardItem {
 
     public void setContentImage(int contentImage) {
         this.contentImage = contentImage;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
