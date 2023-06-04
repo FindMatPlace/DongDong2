@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
-
+/*
     private List<BoardItem> createPost() {
         List<BoardItem> boardItemList = new ArrayList<>();
         CollectionReference postsRef = db.collection("posts");
@@ -112,7 +112,7 @@ public class HomeFragment extends Fragment {
 
         return boardItemList;
     }
-
+*/
     // Method to create dummy data for the board
     private List<BoardItem> createDummyData() {
         List<BoardItem> boardItemList = new ArrayList<>();
