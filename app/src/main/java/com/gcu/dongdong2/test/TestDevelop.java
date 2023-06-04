@@ -9,13 +9,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.gcu.dongdong2.mainpage.dto.PostDto;
 import com.gcu.dongdong2.test.dto.GroupCreateDto;
 import com.gcu.dongdong2.test.dto.NoticeDto;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class TestDevelop extends AppCompatActivity {
 
@@ -66,7 +74,7 @@ public class TestDevelop extends AppCompatActivity {
     }
 
     private void groupNotice(NoticeDto noticeDto) {
-        db.collection("posts")
+        db.collection("notices")
                 .add(noticeDto)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -78,6 +86,41 @@ public class TestDevelop extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d(TAG, "Error: " + e);
+                    }
+                });
+    }
+
+    private void createPost(PostDto postDto) {
+        db.collection("posts")
+                .add(postDto)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "게시물 작성 완료");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "Error: " + e);
+                    }
+                });
+    }
+
+    private void readPost(PostDto postDto) {
+        db.collection("posts")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // 각 문서의 데이터 출력
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.d(TAG, "문서 가져오기 실패: ", task.getException());
+                        }
                     }
                 });
     }
