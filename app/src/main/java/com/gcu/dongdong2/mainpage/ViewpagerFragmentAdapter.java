@@ -3,13 +3,20 @@ package com.gcu.dongdong2.mainpage;
 import static android.content.ContentValues.TAG;
 
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.gcu.dongdong2.HomeFragment;
+import com.gcu.dongdong2.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -43,3 +50,4 @@ public class ViewpagerFragmentAdapter extends FragmentStateAdapter {
         return fragmentList.get(position);
     }
 }
+
