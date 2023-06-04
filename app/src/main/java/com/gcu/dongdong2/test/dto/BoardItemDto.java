@@ -1,6 +1,7 @@
 package com.gcu.dongdong2.test.dto;
 
 public class BoardItemDto {
+    private int idx;
     private int profileImage;
     private String name;
     private String content;
