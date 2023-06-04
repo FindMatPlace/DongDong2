@@ -21,6 +21,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.gcu.dongdong2.mainpage.BoardItem;
 import com.gcu.dongdong2.mainpage.RecyclerViewAdaptor;
 import com.gcu.dongdong2.mainpage.ScheduleFragment;
+
 import com.gcu.dongdong2.mainpage.ViewpagerFragmentAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
