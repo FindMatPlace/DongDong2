@@ -3,6 +3,7 @@ package com.gcu.dongdong2.signup
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -73,6 +74,16 @@ class IdPasswordFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            if (!isValidEmail(userId)) {
+                Snackbar.make(binding.btnNext, "ID는 이메일 형식이어야 합니다", Snackbar.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (userPassword.length < 6) {
+                Snackbar.make(binding.btnNext, "비밀번호는 6자리 이상이어야 합니다", Snackbar.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val bundle = Bundle()
             bundle.putString("id", userId)
             bundle.putString("password", userPassword)
@@ -102,5 +113,9 @@ class IdPasswordFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
