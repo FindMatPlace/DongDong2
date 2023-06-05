@@ -1,20 +1,32 @@
 package com.gcu.dongdong2.mainpage;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.gcu.dongdong2.HomeFragment;
 import com.gcu.dongdong2.R;
+import com.google.firebase.events.Event;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScheduleFragment extends Fragment {
+    private List<Event> events;
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -27,75 +39,120 @@ public class ScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false);
+        View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        Toolbar toolbar = view.findViewById(R.id.sche_toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) requireActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 뒤로 가기 버튼 클릭 시 동작
+                HomeFragment homeFragment = new HomeFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.frameLayout, homeFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Get the LinearLayout container
-        LinearLayout eventContainer = view.findViewById(R.id.eventContainer);
+        LinearLayout container = view.findViewById(R.id.eventContainer);
 
         // Add example events
-        addEvent(eventContainer, R.drawable.profile_image1, "Club Name 1", "Event 1", "Event Time 1", "Event Location 1");
-        addEvent(eventContainer, R.drawable.profile_image2, "Club Name 2", "Event 2", "Event Time 2", "Event Location 2");
-        addEvent(eventContainer, R.drawable.profile_image3, "Club Name 3", "Event 3", "Event Time 3", "Event Location 3");
+        events = new ArrayList<>();
+        events.add(new Event(R.drawable.profile_image1, "Club Name 1", "Event 1", "Event Time 1", "Event Location 1", false));
+        events.add(new Event(R.drawable.profile_image2, "Club Name 2", "Event 2", "Event Time 2", "Event Location 2", true));
+        events.add(new Event(R.drawable.profile_image3, "Club Name 3", "Event 3", "Event Time 3", "Event Location 3", false));
+
+        for (Event event : events) {
+            View eventView = LayoutInflater.from(requireContext()).inflate(R.layout.schedule_item, container, false);
+
+            // Find views within the event item layout
+            ImageView clubImageView = eventView.findViewById(R.id.cl_img);
+            TextView clubNameTextView = eventView.findViewById(R.id.cl_name);
+            TextView eventNameTextView = eventView.findViewById(R.id.schedule_name);
+            TextView eventTimeTextView = eventView.findViewById(R.id.schedule_time);
+            TextView eventLocationTextView = eventView.findViewById(R.id.schedule_location);
+            Button participationButton = eventView.findViewById(R.id.participation);
+
+            // Set data to the views
+            clubImageView.setImageResource(event.clubImageRes);
+            clubNameTextView.setText(event.clubName);
+            eventNameTextView.setText(event.eventName);
+            eventTimeTextView.setText(event.eventTime);
+            eventLocationTextView.setText(event.eventLocation);
+            participationButton.setText(event.isParticipating() ? "참여예정" : "참여하기");
+            participationButton.setTextColor(event.isParticipating() ? Color.parseColor("#000000") : Color.parseColor("#23C562"));
+
+            // Set click listener to the participation button
+            participationButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    event.setParticipating(!event.isParticipating()); // Toggle participation
+
+                    if (event.isParticipating()) {
+                        participationButton.setText("참여예정");
+                        participationButton.setTextColor(Color.parseColor("#000000"));
+                    } else {
+                        participationButton.setText("참여하기");
+                        participationButton.setTextColor(Color.parseColor("#23C562"));
+                    }
+                }
+            });
+            container.addView(eventView);
+        }
     }
 
-    private void addEvent(LinearLayout container, int clubImageRes, String clubName, String eventName, String eventTime, String eventLocation) {
-        // Create a new LinearLayout for the event
-        LinearLayout eventLayout = new LinearLayout(requireContext());
-        eventLayout.setOrientation(LinearLayout.HORIZONTAL);
-        eventLayout.setPadding(16, 16, 16, 16);
+    private static class Event {
+        private int clubImageRes;
+        private String clubName;
+        private String eventName;
+        private String eventTime;
+        private String eventLocation;
+        private boolean participating; // 참여 여부를 나타내는 변수
 
-        // Create ImageView for club image
-        ImageView clubImageView = new ImageView(requireContext());
-        clubImageView.setImageResource(clubImageRes);
-        LinearLayout.LayoutParams imageLayoutParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        imageLayoutParams.setMarginEnd(16);
-        eventLayout.addView(clubImageView, imageLayoutParams);
+        public Event(int clubImageRes, String clubName, String eventName, String eventTime, String eventLocation, boolean participating) {
+            this.clubImageRes = clubImageRes;
+            this.clubName = clubName;
+            this.eventName = eventName;
+            this.eventTime = eventTime;
+            this.eventLocation = eventLocation;
+            this.participating = participating;
+        }
 
-        // Create LinearLayout for event details
-        LinearLayout eventDetailsLayout = new LinearLayout(requireContext());
-        eventDetailsLayout.setOrientation(LinearLayout.VERTICAL);
+        public int getClubImageRes() {
+            return clubImageRes;
+        }
 
-        // Create TextView for club name
-        TextView clubNameTextView = new TextView(requireContext());
-        clubNameTextView.setText(clubName);
-        clubNameTextView.setTextSize(18);
-        eventDetailsLayout.addView(clubNameTextView);
+        public String getClubName() {
+            return clubName;
+        }
 
-        // Create TextView for event name
-        TextView eventNameTextView = new TextView(requireContext());
-        eventNameTextView.setText(eventName);
-        eventDetailsLayout.addView(eventNameTextView);
+        public String getEventName() {
+            return eventName;
+        }
 
-        // Create TextView for event time
-        TextView eventTimeTextView = new TextView(requireContext());
-        eventTimeTextView.setText(eventTime);
-        eventDetailsLayout.addView(eventTimeTextView);
+        public String getEventTime() {
+            return eventTime;
+        }
 
-        // Create TextView for event location
-        TextView eventLocationTextView = new TextView(requireContext());
-        eventLocationTextView.setText(eventLocation);
-        eventDetailsLayout.addView(eventLocationTextView);
+        public String getEventLocation() {
+            return eventLocation;
+        }
 
-        LinearLayout.LayoutParams detailsLayoutParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        eventLayout.addView(eventDetailsLayout, detailsLayoutParams);
+        public boolean isParticipating() {
+            return participating;
+        }
 
-        // Add the event layout to the container
-        LinearLayout.LayoutParams eventLayoutParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        eventLayoutParams.setMargins(0, 0, 0, 16);
-        container.addView(eventLayout, eventLayoutParams);
+        public void setParticipating(boolean participating) {
+            this.participating = participating;
+        }
     }
 }
