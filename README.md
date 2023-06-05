@@ -1,6 +1,6 @@
 # DongDong2
 
-As part of the team project for the Mobile Programming course in the 3rd year of Gachon University, this application was developed with the aim of supporting student clubs.
+As part of the team project for the Mobile Programming course of Gachon University, this application was developed with the aim of supporting student clubs.
 
 While there is a club promotion board within Everytime (a university community platform), to view detailed information about the club, users had to click and read lengthy posts.
 
