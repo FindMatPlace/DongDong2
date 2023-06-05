@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/write_toolbar"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+        <EditText
+            android:id="@+id/write_text"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:hint="글을 입력하세요"
+            android:layout_marginBottom="30dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/upload_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageButton
+                android:id="@+id/upload_button"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:src="@drawable/upload_image"
+                android:background="#FFFFFF"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/rounded_corner_border"
+            android:src="@drawable/write_icon"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+</LinearLayout>
