@@ -1,5 +1,5 @@
 # DongDong2
-# 10th week
+
 ## Team composition 
 * 201935008 권민우
 * 201935113 이한슬
@@ -9,7 +9,8 @@
 ## Progress
 * Set the role for each member
 * Development planning
-* Data Survey for Development
+* UI Design
+* Functionality Implementation
 
 
 # 11th week
@@ -63,7 +64,3 @@ Our Model accuracy is 96%
 When the values measured in room 413 were used as a test set and inputted into the model, the predicted values were returned accurately and correctly.
 ![test](https://github.com/GC-IOT-TermProject-11/AdminTool/assets/101577272/28924a51-56c8-4628-9b16-755cdf7c75b4)
 ![res](https://github.com/GC-IOT-TermProject-11/AdminTool/assets/101577272/264c91b6-6f32-4eca-93a6-569c0bde2dbb)
-
-
-
-> 
