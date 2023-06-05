@@ -54,6 +54,7 @@ Upon selecting a student ID photo from the gallery and uploading it, the system 
 
 The feature allows users to capture and upload their mobile student ID, as shown in the image below, through the Gachon University Smart Campus mobile application. The system then determines whether the user is a student of Gachon University or not.
 ![Student identify](https://github.com/FindMatPlace/DongDong2/assets/118448112/d3a13750-ecdd-458e-a859-7ed6d489b9e6)
+
 Once all the input information is provided and the user is successfully authenticated as a Gachon University student, the account registration process is completed.
 
 ### Main Tab
