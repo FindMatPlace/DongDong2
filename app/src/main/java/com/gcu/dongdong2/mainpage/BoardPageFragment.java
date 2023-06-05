@@ -1,6 +1,8 @@
 package com.gcu.dongdong2.mainpage;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +21,16 @@ import com.gcu.dongdong2.HomeFragment;
 import com.gcu.dongdong2.R;
 
 public class BoardPageFragment extends Fragment {
-    private int profileImage;
-    private int contentImage;
-    private String name;
-    private String content;
+    private BoardItem boardItem;
 
     public BoardPageFragment() {
         // Required empty public constructor
     }
 
-    public static BoardPageFragment newInstance(int profileImage, int contentImage, String name, String content) {
+    public static BoardPageFragment newInstance(BoardItem boardItem) {
         BoardPageFragment fragment = new BoardPageFragment();
         Bundle args = new Bundle();
-        args.putInt("profile_image_url", profileImage);
-        args.putInt("content_image_url", contentImage);
-        args.putString("name", name);
-        args.putString("content", content);
+        args.putParcelable("boardItem", (Parcelable) boardItem);
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,10 +39,7 @@ public class BoardPageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            profileImage = getArguments().getInt("profile_image_url");
-            contentImage = getArguments().getInt("content_image_url");
-            name = getArguments().getString("name");
-            content = getArguments().getString("content");
+            boardItem = getArguments().getParcelable("boardItem");
         }
     }
 
@@ -77,10 +70,12 @@ public class BoardPageFragment extends Fragment {
         TextView tvName = view.findViewById(R.id.tv_name);
         TextView tvContent = view.findViewById(R.id.tv_content);
 
-        ivProfile.setImageResource(profileImage);
-        ivContent.setImageResource(contentImage);
-        tvName.setText(name);
-        tvContent.setText(content);
+        if (boardItem != null) {
+            ivProfile.setImageResource(boardItem.getProfileImage());
+            ivContent.setImageURI(boardItem.getContentImageUri());
+            tvName.setText(boardItem.getName());
+            tvContent.setText(boardItem.getContent());
+        }
 
         return view;
     }

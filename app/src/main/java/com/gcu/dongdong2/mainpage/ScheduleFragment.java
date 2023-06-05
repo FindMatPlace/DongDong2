@@ -67,9 +67,9 @@ public class ScheduleFragment extends Fragment {
 
         // Add example events
         events = new ArrayList<>();
-        events.add(new Event(R.drawable.profile_image1, "Club Name 1", "Event 1", "Event Time 1", "Event Location 1", false));
-        events.add(new Event(R.drawable.profile_image2, "Club Name 2", "Event 2", "Event Time 2", "Event Location 2", true));
-        events.add(new Event(R.drawable.profile_image3, "Club Name 3", "Event 3", "Event Time 3", "Event Location 3", false));
+        events.add(new Event(R.drawable.club_logo1, "Club Name 1", "Event 1", "Event Time 1", "Event Location 1", false));
+        events.add(new Event(R.drawable.club_logo2, "Club Name 2", "Event 2", "Event Time 2", "Event Location 2", true));
+        events.add(new Event(R.drawable.club_logo3, "Club Name 3", "Event 3", "Event Time 3", "Event Location 3", false));
 
         for (Event event : events) {
             View eventView = LayoutInflater.from(requireContext()).inflate(R.layout.schedule_item, container, false);

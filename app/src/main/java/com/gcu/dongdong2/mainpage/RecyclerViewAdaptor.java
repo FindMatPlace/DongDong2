@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gcu.dongdong2.R;
+import com.squareup.picasso.Picasso;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -55,7 +55,7 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
             }
         }
         private void showBoardPageFragment(BoardItem item) {
-            Fragment fragment = BoardPageFragment.newInstance(item.getProfileImage(), item.getContentImage(), item.getName(), item.getContent());
+            Fragment fragment = BoardPageFragment.newInstance(item);
             FragmentTransaction transaction = ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction();
 
             transaction.replace(R.id.frameLayout, fragment);
@@ -71,7 +71,7 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
         holder.tv_name.setText(item.getName());
         holder.tv_content.setText(item.getContent()); // 원하는 내용으로 변경해주세요
         holder.iv_profile.setImageResource(item.getProfileImage()); // 프로필 이미지를 설정해주세요
-        holder.iv_content.setImageResource(item.getContentImage()); // 내용 이미지를 설정해주세요
+        Picasso.get().load(item.getContentImageUri()).into(holder.iv_content);
     }
 
     @NonNull

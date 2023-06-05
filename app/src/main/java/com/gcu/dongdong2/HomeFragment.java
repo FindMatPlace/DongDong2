@@ -2,11 +2,13 @@ package com.gcu.dongdong2;
 
 import static android.content.ContentValues.TAG;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -25,6 +27,7 @@ import com.gcu.dongdong2.mainpage.RecyclerViewAdaptor;
 import com.gcu.dongdong2.mainpage.ScheduleFragment;
 
 import com.gcu.dongdong2.mainpage.ViewpagerFragmentAdapter;
+import com.gcu.dongdong2.mainpage.WriteFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -38,10 +41,10 @@ import java.util.Map;
 
 public class HomeFragment extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
 
         ImageView imageView = view.findViewById(R.id.pay_image);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +75,19 @@ public class HomeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adaptor);
+
+        ImageButton writeButton = view.findViewById(R.id.write_button);
+        writeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 프라그먼트 전환을 처리할 코드 작성
+                Fragment fragment = new WriteFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
         return view;
     }
@@ -129,13 +145,13 @@ public class HomeFragment extends Fragment {
         return boardItemList;
     }
 */
-    // Method to create dummy data for the board
+
     private List<BoardItem> createDummyData() {
         List<BoardItem> boardItemList = new ArrayList<>();
         // Add dummy items
-        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", R.drawable.board_image1, 1);
-        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", R.drawable.board_image2, 2);
-        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "Sed do eiusmod tempor incididunt", R.drawable.board_image1, 3);
+        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 1);
+        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image2), 2);
+        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "Sed do eiusmod tempor incididunt", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 3);
 
         boardItemList.add(item1);
         boardItemList.add(item2);
