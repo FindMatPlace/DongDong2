@@ -15,17 +15,17 @@
         android:gravity="center_vertical">
 
         <ImageView
-            android:id="@+id/cl_img"
+            android:id="@+id/pay_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/cl_name"
+            android:id="@+id/pay_club"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/schedule_name"
+            android:id="@+id/pay_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -35,22 +35,40 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/schedule_time"
+            android:id="@+id/pay_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/schedule_location"
+            android:id="@+id/pay_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/participation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:background="@android:color/transparent"
-        android:text="참여하기"
-        android:textColor="#23C562"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/pay_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1867FF"
+            android:text="₩0"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20sp"/>
+
+        <Button
+            android:id="@+id/pay_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#23C562"
+            android:text="송금하기"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20sp"/>
+    </RelativeLayout>
+
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.gcu.dongdong2.mainpage.BoardItem;
+import com.gcu.dongdong2.mainpage.PayFragment;
 import com.gcu.dongdong2.mainpage.RecyclerViewAdaptor;
 import com.gcu.dongdong2.mainpage.ScheduleFragment;
 
@@ -40,6 +42,19 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+
+        ImageView imageView = view.findViewById(R.id.pay_image);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new PayFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
         // 1) Get reference to ViewPager2
         ViewPager2 viewPager = view.findViewById(R.id.bannerViewPager);
 
@@ -47,16 +62,6 @@ public class HomeFragment extends Fragment {
         ViewpagerFragmentAdapter viewpagerFragmentAdapter = new ViewpagerFragmentAdapter(getActivity());
         // 3) Set the adapter for ViewPager2
         viewPager.setAdapter(viewpagerFragmentAdapter);
-        viewPager.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ScheduleFragment();
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameLayout, fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
 
         List<BoardItem> boardItemList = createDummyData();
 
