@@ -44,8 +44,14 @@ We have chosen this database for its advantages in real-time data updates and se
 
 ## Function
 ### Signup
----
+
 * Check for duplicate UserID
+It is a feature that verifies if an ID exists or not. If an existing ID is found, it prevents its usage, making it unavailable.
+* School Authentication
+Upon selecting a student ID photo from the gallery and uploading it, the system will analyze the image to verify if the individual is a student of Gachon University. If the person is indeed a student of Gachon University, the authentication process will be considered complete.
+
+The feature allows users to capture and upload their mobile student ID, as shown in the image below, through the Gachon University Smart Campus mobile application. The system then determines whether the user is a student of Gachon University or not.
+
 
 ### Main Tab
 
