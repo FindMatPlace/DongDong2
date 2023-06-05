@@ -33,12 +33,13 @@ We have chosen this database for its advantages in real-time data updates and se
 
 ## UI Design
 * Login & Signup Tab
-
+![Login   signup](https://github.com/FindMatPlace/DongDong2/assets/118448112/aa1f40b9-6603-410a-bf6d-30147c9c143b)
 * Main Tab
-
+![Home](https://github.com/FindMatPlace/DongDong2/assets/118448112/db6cb479-7c8b-4ed4-9ed1-558935bad4ef)
 * Find Tab
-
+![Club](https://github.com/FindMatPlace/DongDong2/assets/118448112/55406616-87c9-495a-be1d-f181e0ee178a)
 * Alarm & Setting Tab
+![Setting and Notification](https://github.com/FindMatPlace/DongDong2/assets/118448112/4494bb90-8b5f-4b04-979c-aeaf54d6e4a8)
 
 ## Function
 ### Signup
