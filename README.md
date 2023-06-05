@@ -27,6 +27,7 @@ Through this application, we hope to successfully support students' club activit
 * 201935125 정규원 : Alarm tab & Setting tab & Bottom navigation
 
 ## Client-Server Based Application
+![Firebase](https://github.com/FindMatPlace/DongDong2/assets/118448112/d7b4e56c-47df-48cd-913d-af349062f51b)
 Our team has used Firebase as the database for our project.
 Firebase is a real-time database, making it easy to use and highly compatible with the Android platform.
 We have chosen this database for its advantages in real-time data updates and seamless integration with Android applications.
