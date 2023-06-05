@@ -57,9 +57,17 @@ The feature allows users to capture and upload their mobile student ID, as shown
 Once all the input information is provided and the user is successfully authenticated as a Gachon University student, the account registration process is completed.
 
 ### Main Tab
+* At the top of the main home screen, there is a banner displaying announcements. Clicking on the announcements shows a calendar and the members participating.
+* Below, there is a section where users can view posts uploaded by club members. Clicking on a post allows users to view the post in detail.
 
 ### Find Tab
+* Users can search for existing clubs by entering keywords or desired content.
+* Upon selecting a club, users can access promotional posts and ask questions. There is also a feature to fill out an application form.
 
 ### Alarm Tab
+* Users receive notifications when new announcements or posts are made within a club. (feature to be implemented)
 
 ### Setting Tab
+* The user's name is displayed in the settings.
+* Users have the option to change their password.
+* Users can log out.
