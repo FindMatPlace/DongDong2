@@ -52,7 +52,7 @@ It is a feature that verifies if an ID exists or not. If an existing ID is found
 
 Upon selecting a student ID photo from the gallery and uploading it, the system will analyze the image to verify if the individual is a student of Gachon University. If the person is indeed a student of Gachon University, the authentication process will be considered complete.
 
-The feature allows users to capture and upload their mobile student ID, as shown in the image below, through the Gachon University Smart Campus mobile application. The system then determines whether the user is a student of Gachon University or not.
+The feature allows users to capture and upload their mobile student ID, through the Gachon University Smart Campus mobile application. The system then determines whether the user is a student of Gachon University or not.
 
 Once all the input information is provided and the user is successfully authenticated as a Gachon University student, the account registration process is completed.
 
