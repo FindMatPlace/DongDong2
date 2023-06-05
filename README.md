@@ -44,7 +44,7 @@ We have chosen this database for its advantages in real-time data updates and se
 
 ## Function
 ### Signup
-
+---
 * Check for duplicate UserID
 
 ### Main Tab
