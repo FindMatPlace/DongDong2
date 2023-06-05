@@ -25,14 +25,14 @@ We have chosen this database for its advantages in real-time data updates and se
 
 
 ## Function
-# Signup
+### Signup
 
 * Check for duplicate UserID
 
-# Main tab
+### Main tab
 
-# Find tab
+### Find tab
 
-# Alarm tab
+### Alarm tab
 
-# Setting tab
+### Setting tab
