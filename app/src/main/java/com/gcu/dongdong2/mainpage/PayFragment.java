@@ -66,9 +66,9 @@ public class PayFragment extends Fragment {
 
         // Add example events
         events = new ArrayList<>();
-        events.add(new PayFragment.Event(R.drawable.club_logo1, "바보 동아리", "5차 정모", "2023년 5월 17일 20시", "노원역", 25000, 0));
-        events.add(new PayFragment.Event(R.drawable.club_logo2, "가천 동아리", "번개모임", "2023년 5월 18일 14시", "가천대역", 20000, 0));
-        events.add(new PayFragment.Event(R.drawable.club_logo3, "바보 동아리", "6차 정모", "2023년 5월 20일 17시", "창동역", 30000, 0));
+        events.add(new PayFragment.Event(R.drawable.club_logo1, "보드게임 동아리", "5차 정모", "2023년 5월 17일 20시", "노원역", 25000, 0));
+        events.add(new PayFragment.Event(R.drawable.club_logo2, "축구 동아리", "번개모임", "2023년 5월 18일 14시", "가천대역", 20000, 0));
+        events.add(new PayFragment.Event(R.drawable.club_logo3, "농구 동아리", "6차 정모", "2023년 5월 20일 17시", "창동역", 30000, 0));
 
         for (PayFragment.Event event : events) {
             View eventView = LayoutInflater.from(requireContext()).inflate(R.layout.pay_item, container, false);

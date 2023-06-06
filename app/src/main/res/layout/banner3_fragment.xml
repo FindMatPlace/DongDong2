@@ -11,7 +11,7 @@
         android:id="@+id/title_banner3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="바보 동아리 5차 정모!!"
+        android:text="농구 동아리 6차 정모!!"
         android:textSize="30dp"
         android:textColor="@color/white"
         />
@@ -19,7 +19,7 @@
         android:id="@+id/time_banner3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5월 17일 20시"
+        android:text="5월 20일 17시"
         android:textSize="20dp"
         android:textColor="@color/white"
         />

@@ -67,9 +67,9 @@ public class ScheduleFragment extends Fragment {
 
         // Add example events
         events = new ArrayList<>();
-        events.add(new Event(R.drawable.club_logo1, "Club Name 1", "Event 1", "Event Time 1", "Event Location 1", false));
-        events.add(new Event(R.drawable.club_logo2, "Club Name 2", "Event 2", "Event Time 2", "Event Location 2", true));
-        events.add(new Event(R.drawable.club_logo3, "Club Name 3", "Event 3", "Event Time 3", "Event Location 3", false));
+        events.add(new Event(R.drawable.club_logo1, "보드게임 동아리", "5차 정모", "2023년 5월 17일 20시", "노원역", false));
+        events.add(new Event(R.drawable.club_logo2, "축구 동아리", "번개 모임", "2023년 5월 18일 14시", "가천대역", true));
+        events.add(new Event(R.drawable.club_logo3, "농구 동아리", "6차 정모", "2023년 5월 20일 17시", "창동역", false));
 
         for (Event event : events) {
             View eventView = LayoutInflater.from(requireContext()).inflate(R.layout.schedule_item, container, false);
