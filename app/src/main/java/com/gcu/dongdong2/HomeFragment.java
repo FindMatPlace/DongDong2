@@ -149,9 +149,9 @@ public class HomeFragment extends Fragment {
     private List<BoardItem> createDummyData() {
         List<BoardItem> boardItemList = new ArrayList<>();
         // Add dummy items
-        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "Lorem ipsum dolor sit amet", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 1);
-        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "Consectetur adipiscing elit", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image2), 2);
-        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "Sed do eiusmod tempor incididunt", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 3);
+        BoardItem item1 = new BoardItem(R.drawable.profile_image1, "정규원", "동아리 게시물 입니다", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 1);
+        BoardItem item2 = new BoardItem(R.drawable.profile_image2, "이현석", "동아리 게시물 입니다2", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image2), 2);
+        BoardItem item3 = new BoardItem(R.drawable.profile_image3, "권민우", "동아리 게시물 입니다3", Uri.parse("android.resource://com.gcu.dongdong2/" + R.drawable.board_image1), 3);
 
         boardItemList.add(item1);
         boardItemList.add(item2);
