@@ -72,10 +72,10 @@ class VerifyCodeFragment : Fragment() {
             }
         }
 
-        binding.btnTest.setOnClickListener {
-            savedStateHandle[AUTH] = true
-//            onVerificationSucceed()
-        }
+//        binding.btnTest.setOnClickListener {
+//            savedStateHandle[AUTH] = true
+////            onVerificationSucceed()
+//        }
     }
 
     // 인증성공, PhoneFragment로 돌아간다.

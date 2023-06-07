@@ -36,10 +36,10 @@ public class ClubExploreFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         List<Club> clubList = new ArrayList<>();
-        clubList.add(new Club("마타티아","가천대 유일 가톨릭 동아리", "기타", R.drawable.club_drawing1));
-        clubList.add(new Club("EPU","댄스 동아리", "기타", R.drawable.club_drawing1));
-        clubList.add(new Club("리더스","보드게임 동아리", "컴퓨터", R.drawable.club_drawing1));
-        clubList.add(new Club("페이키","레저스포츠 동아리", "IT", R.drawable.club_drawing1));
+        clubList.add(new Club("Matatia","가천대 유일 가톨릭 동아리", "기타", R.drawable.club_drawing1)); //Test dataset
+        clubList.add(new Club("Leaders", "보드게임 동아리","Category 1", R.drawable.club_drawing1));
+        clubList.add(new Club("Snapshot","사진 출사", "기타", R.drawable.club_drawing1));
+        clubList.add(new Club("FAKIE","레저스포츠 동아리", "IT", R.drawable.club_drawing1));
 
         ClubExploreAdapter adapter = new ClubExploreAdapter(clubList);
         recyclerView.setAdapter(adapter);
